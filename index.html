@@ -14,18 +14,85 @@
      <section>
         <div class="headermail">
 
-            <h2>Mail</h2>
+            <h2>eMail</h2>
             <p>Prego, inserisci la tua email e controlla che sia nei nostri database. </p>
             <p class="note">*Scrivendo i vostri dati accettate implicitamente che possano essere usati a scopi commerciali, giudiziari, testing cosmetici inoltre la vostra anima sarà nostra. <br>**L'azienda non è responsabile per eventuali indagini sul vostro conto.</p>
         
         </div>
 
-        <form class="main-mail" action="#">
-            <input id="email-input" type="email">
+        <form class="main-mail" name="email" onsubmit="return false" >
+            <input id="email-input" type="email" placeholder="NomeCognome@email.com - prova questa">
+            <button type="submit" id="btn-email" name="email">Controlla la tua email</button>
         </form>
+
+        <p id="answer-email"></p>
      </section>
 
-     <section></section>
+     <section>
+
+        <div class="headermail">
+
+            <h2>Dadi</h2>
+            <p>Scegli un numero da 1 a 6 e prova la fortuna. </p>
+        
+        </div>
+
+        <form class="main-mail" name="dado" onsubmit="return false">
+            <label for="num">Scegli un numero:</label>
+            <select id="dado-num" name="dado">
+              <option value="0"></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <input id="btn-dadi" class="btn" type="submit" value="Gioca!">
+        </form>
+
+        <div class="dadi-wrapper">
+            
+            <div class="dado-space">
+                <div class="dado dado-pc">
+                    <div class="pallino" id="pallino-1"></div>
+                    <div class="pallino pallino-c-null"></div>
+                    <div class="pallino" id="pallino-2"></div>
+                    <div class="pallino" id="pallino-3"></div>
+                    <div class="pallino" id="pallino-c"></div>
+                    <div class="pallino" id="pallino-4"></div>
+                    <div class="pallino" id="pallino-5"></div>
+                    <div class="pallino pallino-c-null"></div>
+                    <div class="pallino" id="pallino-6"></div>
+                </div>
+                <p id="pc-resoult"></p>
+
+            </div>
+            
+            <div class="dado-space">
+
+                <dado class="dado dado-user">
+                    <div class="pallino" id="u-pallino-1"></div>
+                    <div class="pallino pallino-c-null"></div>
+                    <div class="pallino" id="u-pallino-2"></div>
+                    <div class="pallino" id="u-pallino-3"></div>
+                    <div class="pallino" id="u-pallino-c"></div>
+                    <div class="pallino" id="u-pallino-4"></div>
+                    <div class="pallino" id="u-pallino-5"></div>
+                    <div class="pallino pallino-c-null"></div>
+                    <div class="pallino" id="u-pallino-6"></div>
+                </dado>
+                <p id="user-resoult"></p>
+            
+            </div>
+            
+
+        </div>
+
+        <p id="general" align="center"></p>
+
+
+     </section>
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>

@@ -4,6 +4,105 @@
     box-sizing: border-box;
 }
 
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    padding: 20px;
+    
+}
+
+.headermail{
+    background-color: rgb(247, 244, 244);
+    padding: 10px;
+}
+
 .note{
     font-size: .3em;
+}
+
+.main-mail{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#email-input{
+    width: 300px;
+}
+
+.btn,
+#btn-email{
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+    border: 1px 1px rgba(255, 255, 255, 0);
+    cursor: pointer;
+    background: #4e7bdb;
+    color:white;
+}
+.btn:active,
+#btn-email:active{
+    background: #1d3361;
+    color:rgb(192, 192, 192);
+
+}
+
+#answer-email{
+    text-align: center;
+}
+
+.dado-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.dado{
+    background: rgb(247, 247, 245);
+    width: 200px; height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px
+}
+
+.pallino{
+    width: 50px;
+    height: 50px;
+    background: #000;
+    border-radius: 50%;
+}
+
+#pallino-1,
+#pallino-2,
+#pallino-3,
+#pallino-4,
+#pallino-5,
+#pallino-6,
+#u-pallino-1,
+#u-pallino-2,
+#u-pallino-3,
+#u-pallino-4,
+#u-pallino-5,
+#u-pallino-6{
+    opacity: 0;
+}
+
+.pallino-c-null{
+    background: transparent;
+}
+
+.dadi-wrapper{
+    display: flex;
+    justify-content: space-around;
 }
