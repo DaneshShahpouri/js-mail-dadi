@@ -4,6 +4,7 @@ let userEmail = document.getElementById("email-input");
 let answer = document.getElementById("answer-email");
 let arrEmail = ['Carmineilmago@gmail.com', 'pistacchissimo@gmail.com', 'quandocieralvi@altervista.com', 'bergogliosventrapapere@gmail.com', 'gemelloMalvagio@gmail.com', 'NomeCognome@gmail.com']
 let arrUserEmail = [];
+let isEmail;
 
 //dadi
 let btnDadi = document.getElementById("btn-dadi");
@@ -33,15 +34,26 @@ let up6 = document.getElementById("u-pallino-6");
 
 btnEmail.addEventListener('click', function(){
     arrUserEmail.push(userEmail.value);
+    isEmail = false
 
     for(let i = 0; i < arrEmail.length; i++){
 
-
+        
         if(userEmail.value == arrEmail[i]){
+            isEmail=true
+            console.log(isEmail)
+            
+        }
 
-            answer.innerText = "ok, abbiamo i tuoi dati, stiamo venendo a prenderti!"
+    }
 
-        }else if(arrUserEmail.length > 3 && arrUserEmail[arrUserEmail.length-1] == arrUserEmail[arrUserEmail.length-2] ){
+    if (isEmail == true){ 
+
+    answer.innerText = "ok, abbiamo i tuoi dati, stiamo venendo a prenderti!"
+
+    }else if(isEmail == false){
+
+        if(arrUserEmail.length > 3 && arrUserEmail[arrUserEmail.length-1] == arrUserEmail[arrUserEmail.length-2] ){
 
             answer.innerText="oh ma sei di coccio!!"
             
@@ -52,14 +64,16 @@ btnEmail.addEventListener('click', function(){
         }else{
             answer.innerText="scusi, ma chi ti conosce?"
         }
+        
+        if(arrUserEmail.length > 2 && arrUserEmail[arrUserEmail.length-1] != arrUserEmail[arrUserEmail.length-2]){
+            arrUserEmail = [] 
+        }
     }
+        
+});
     
-    if(arrUserEmail.length > 2 && arrUserEmail[arrUserEmail.length-1] != arrUserEmail[arrUserEmail.length-2]){
-        arrUserEmail = [] 
-    }
 
     //console.log(arrUserEmail)
-});
 
 btnDadi.addEventListener('click', function(){
     let pcRandom = Math.floor(Math.random() * 6 + 1 );
